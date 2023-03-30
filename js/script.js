@@ -1,6 +1,25 @@
 $(document).ready(function() {
     var oddsArray = null;
 
+    function preLoadImages() {
+        $.getJSON("../assets/tft-champion.json", function(data) {
+            var imageUrls = [];
+
+            $.each(data.data, function() {
+                var championobj = $(this);
+                var image = championobj[0]['image']['full'];
+                    imageUrls.push(image);
+            });
+            // Preload images
+            var images = [];
+            for (var i = 0; i < imageUrls.length; i++) {
+                var image = new Image();
+                image.src = imageUrls[i];
+                images.push(image);
+            }
+        });
+    }
+
     $(document).on('keydown', function(e) {
         if (e.key === "d") {
             $('#roll').click();
