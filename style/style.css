@@ -1,0 +1,44 @@
+#roll{
+    height: 25px;
+    width: 50px;
+}
+
+.shop-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.shop-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.champion-panel{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    /*border: solid 1px;*/
+    height: 150px;
+    width: 190px;
+}
+
+.purchase-panel {
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.currency-display {
+    background-color: #ffd700;
+    padding: 10px;
+}
+
+.roll-down-timer {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
