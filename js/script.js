@@ -29,7 +29,7 @@ $(document).ready(function() {
 
     function getChampionData(tierIndex, callback) {
         //console.log("this function");
-        $.getJSON("../assets/13.6.1/data/en_US/tft-champion.json", function(data) {
+        $.getJSON("../assets/tft-champion.json", function(data) {
             var champArray = [];
             $.each(data.data, function() {
                 var championobj = $(this);
@@ -82,7 +82,7 @@ $(document).ready(function() {
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
-                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/13.6.1/img/tft-champion/" + champArray[number] + "'/> " +
+                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number] + "'/> " +
                     "<img id='champ-border' src='../assets/hud-img/border_" + tierIndex + ".png'/>");
             });
         });
