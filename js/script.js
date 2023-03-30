@@ -6,11 +6,14 @@ $(document).ready(function() {
             $('#roll').click();
         }
     });
+
     $("#roll").click(function() {
         generateChampion(function(championArray) {
             refreshShop(championArray);
         });
     });
+
+    $('#roll').trigger('click');
 
     function getOddsArray(currentlevel, callback) {
         $.getJSON("../odds.json", function(data) {
@@ -19,7 +22,6 @@ $(document).ready(function() {
                 if (parseInt(levelobj[0]['level']) === parseInt(currentlevel)) {
                     oddsArray = levelobj[0]['odds'];
                     callback(oddsArray);
-
                 }
             });
         });
@@ -27,12 +29,13 @@ $(document).ready(function() {
 
     function getChampionData(tierIndex, callback) {
         //console.log("this function");
-        $.getJSON("../assets/13.3.1/data/en_US/tft-champion.json", function(data) {
+        $.getJSON("../assets/13.6.1/data/en_US/tft-champion.json", function(data) {
             var champArray = [];
             $.each(data.data, function() {
                 var championobj = $(this);
                 if (parseInt(championobj[0]['tier']) === parseInt(tierIndex)) {
                     champArray.push(championobj[0]['image']['full']);
+                    //champArray[1].push(championobj[0]['name']);
                 }
             });
             callback(champArray);
@@ -51,7 +54,7 @@ $(document).ready(function() {
             var championArray = [];
             for (var i = 0; i < 5; i++) {
                 var random_num = Math.floor(Math.random() * 100);
-
+                console.log(random_num);
                 if (random_num < cost1odds ) {
                     var champion_tier = 1;
                 } else if (random_num < cost1odds + cost2odds) {
@@ -69,13 +72,21 @@ $(document).ready(function() {
         });
     }
 
+    function onClickChampion(){
+        console.log("click");
+
+    }
+
     function refreshShop(championArray) {
-        var championPanel = $('.champion-panel')
-        $.each(championArray, function(i, value) {
-            getChampionData(value, function(champArray) {
+        var championPanel = $('.champion-panel');
+        $.each(championArray, function(i, tierIndex) {
+            getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
-                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/13.3.1/img/tft-champion/" + champArray[number] + "'/>");
+                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/13.6.1/img/tft-champion/" + champArray[number] + "'/> " +
+                    "<img id='champ-border' src='../assets/hud-img/border_" + tierIndex + ".png'/>");
             });
         });
     }
+
+
 });
