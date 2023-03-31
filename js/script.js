@@ -2,28 +2,9 @@ $(document).ready(function() {
     var oddsArray = null;
     preLoadImages();
     function preLoadImages() {
-       /* $.getJSON("../assets/tft-champion.json", function(data) {
-            var imageUrls = [];
-            $.each(data.data, function() {
-                var championobj = $(this);
-                    var image = championobj[0]['image']['full'];
-                    var imagearray = "../assets/tft-champion/" + image;
-                    imageUrls.push(imagearray);
-            });
-
-        });
-
-        var imageArray = []; // initialize an empty array to hold the images
-
-        // loop through all the images in the file and add them to the array
-        $("/assets/").each(function() {
-            imageArray.push($(this).attr('src'));
-        });*/
-
-        var imageArray = []; // initialize an empty array to hold the images
-
+        var imageArray = [];
         $.ajax({
-            url: '../assets/tft-champion', // replace with the path to your folder
+            url: '../assets/images',
             success: function(data) {
                 $(data).find('a').each(function() {
                     var filename = $(this).attr('href');
@@ -121,8 +102,8 @@ $(document).ready(function() {
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
-                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number] + "'/> " +
-                    "<img id='champ-border' src='../assets/hud-img/border_" + tierIndex + ".png'/>");
+                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/images/" + champArray[number] + "'/> " +
+                    "<img id='champ-border' src='../assets/images/border_" + tierIndex + ".png'/>");
             });
         });
     }
