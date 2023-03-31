@@ -2,7 +2,7 @@ $(document).ready(function() {
     var oddsArray = null;
     preLoadImages();
     function preLoadImages() {
-        $.getJSON("../assets/tft-champion.json", function(data) {
+       /* $.getJSON("../assets/tft-champion.json", function(data) {
             var imageUrls = [];
             $.each(data.data, function() {
                 var championobj = $(this);
@@ -10,10 +10,35 @@ $(document).ready(function() {
                     var imagearray = "../assets/tft-champion/" + image;
                     imageUrls.push(imagearray);
             });
-            $.each(imageUrls, function(index, url) {
-                $('<img/>')[0].src = url;
-            });
+
         });
+
+        var imageArray = []; // initialize an empty array to hold the images
+
+        // loop through all the images in the file and add them to the array
+        $("/assets/").each(function() {
+            imageArray.push($(this).attr('src'));
+        });*/
+
+        var imageArray = []; // initialize an empty array to hold the images
+
+        $.ajax({
+            url: '../assets/tft-champion', // replace with the path to your folder
+            success: function(data) {
+                $(data).find('a').each(function() {
+                    var filename = $(this).attr('href');
+                    if (filename.match(/\.(jpg|jpeg|png|gif)$/)) {
+                        imageArray.push(filename);
+                    }
+                });
+                if(this.success){
+                    $.each(imageArray, function(url) {
+                        $('<img/>')[0].src = url;
+                    });
+                }
+            }
+        });
+
     }
 
     $(document).on('keydown', function(e) {
@@ -89,7 +114,6 @@ $(document).ready(function() {
 
     function onClickChampion(){
         console.log("click");
-
     }
 
     function refreshShop(championArray) {
