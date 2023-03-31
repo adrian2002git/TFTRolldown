@@ -10,7 +10,7 @@ $(document).ready(function() {
                     var filename = $(this).attr('href');
                     if (filename.match(/\.(jpg|jpeg|png|gif)$/)) {
                         var file = "../assets/images/"+filename
-                        imageArray.push(filename);
+                        imageArray.push(file);
                     }
                 });
                 if(this.success){
