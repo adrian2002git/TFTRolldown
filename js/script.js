@@ -9,6 +9,7 @@ $(document).ready(function() {
                 $(data).find('a').each(function() {
                     var filename = $(this).attr('href');
                     if (filename.match(/\.(jpg|jpeg|png|gif)$/)) {
+                        var file = "../assets/images/"+filename
                         imageArray.push(filename);
                     }
                 });
