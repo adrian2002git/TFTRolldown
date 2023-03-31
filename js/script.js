@@ -1,22 +1,23 @@
 $(document).ready(function() {
     var oddsArray = null;
 
+    preLoadImages();
+
     function preLoadImages() {
         $.getJSON("../assets/tft-champion.json", function(data) {
             var imageUrls = [];
 
             $.each(data.data, function() {
                 var championobj = $(this);
-                var image = championobj[0]['image']['full'];
-                    imageUrls.push(image);
+                    //var PathToImage = ""
+                    var image = championobj[0]['image']['full'];
+                    var imagearray = "../assets/tft-champion/" + image;
+                    imageUrls.push(imagearray);
             });
             // Preload images
-            var images = [];
-            for (var i = 0; i < imageUrls.length; i++) {
-                var image = new Image();
-                image.src = imageUrls[i];
-                images.push(image);
-            }
+            $.each(imageUrls, function(index, url) {
+                $('<img/>')[0].src = url;
+            });
         });
     }
 
