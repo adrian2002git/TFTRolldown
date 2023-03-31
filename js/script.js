@@ -14,6 +14,7 @@ $(document).ready(function() {
                 $('<img/>')[0].src = url;
             });
         });
+    }
 
     $(document).on('keydown', function(e) {
         if (e.key === "d") {
