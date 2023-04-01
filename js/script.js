@@ -4,12 +4,13 @@ $(document).ready(function() {
     function preLoadImages() {
         $.getJSON("../assets/tft-champion.json", function(data) {
             var imageUrls = [];
+
             $.each(data.data, function() {
                 var championobj = $(this);
-                    var image = championobj[0]['image']['full'];
-                    var imagearray = "../assets/tft-champion/" + image;
-                    imageUrls.push(imagearray);
+                var image = championobj[0]['image']['full'];
+                imageUrls.push(image);
             });
+            // Preload images
             $.each(imageUrls, function(index, url) {
                 $('<img/>')[0].src = url;
             });
@@ -28,7 +29,6 @@ $(document).ready(function() {
             refreshShop(championArray);
         });
     });
-
     $('#roll').trigger('click');
 
     function getOddsArray(currentlevel, callback) {
@@ -90,7 +90,6 @@ $(document).ready(function() {
 
     function onClickChampion(){
         console.log("click");
-
     }
 
     function refreshShop(championArray) {
@@ -99,7 +98,7 @@ $(document).ready(function() {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
                 championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number] + "'/> " +
-                    "<img id='champ-border' src='../assets/hud-img/border_" + tierIndex + ".png'/>");
+                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>");
             });
         });
     }
