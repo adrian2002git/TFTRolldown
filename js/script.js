@@ -16,6 +16,7 @@ $(document).ready(function() {
         });
     }
 
+
     $(document).on('keydown', function(e) {
         if (e.key === "d") {
             $('#roll').click();
