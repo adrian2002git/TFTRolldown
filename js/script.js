@@ -3,7 +3,7 @@ $(document).ready(function() {
     preLoadImages();
     function preLoadImages() {
         $.getJSON("../assets/tft-champion.json", function(data) {
-            var imageUrls = [];
+            var imageUrls = ['assets/hud-images/border_1.png','assets/hud-images/border_2.png', 'assets/hud-images/border_3.png', 'assets/hud-images/border_4.png', 'assets/hud-images/border_5.png'];
 
             $.each(data.data, function() {
                 var championobj = $(this);
@@ -11,8 +11,7 @@ $(document).ready(function() {
                 var imagefile = "assets/tft-champion/"+image
                 imageUrls.push(imagefile);
             });
-            // Preload images
-            console.log(imageUrls)
+
             $.each(imageUrls, function(index, url) {
                 $('<img/>')[0].src = url;
             });
@@ -72,7 +71,6 @@ $(document).ready(function() {
             var championArray = [];
             for (var i = 0; i < 5; i++) {
                 var random_num = Math.floor(Math.random() * 100);
-                console.log(random_num);
                 if (random_num < cost1odds ) {
                     var champion_tier = 1;
                 } else if (random_num < cost1odds + cost2odds) {
