@@ -1,8 +1,15 @@
 $(document).ready(function() {
     var oddsArray = null;
     preLoadImages();
+    $("#roll").click(function() {
+        generateChampion(function(championArray) {
+            refreshShop(championArray);
+        });
+    });
+    $('#roll').trigger('click');
     function preLoadImages() {
         $.getJSON("../assets/tft-champion.json", function(data) {
+            //todo replace with directory search
             var imageUrls = ['assets/hud-images/border_1.png','assets/hud-images/border_2.png', 'assets/hud-images/border_3.png', 'assets/hud-images/border_4.png', 'assets/hud-images/border_5.png'];
 
             $.each(data.data, function() {
@@ -11,26 +18,16 @@ $(document).ready(function() {
                 var imagefile = "assets/tft-champion/"+image
                 imageUrls.push(imagefile);
             });
-
             $.each(imageUrls, function(index, url) {
                 $('<img/>')[0].src = url;
             });
         });
     }
-
-
     $(document).on('keydown', function(e) {
         if (e.key === "d") {
             $('#roll').click();
         }
     });
-
-    $("#roll").click(function() {
-        generateChampion(function(championArray) {
-            refreshShop(championArray);
-        });
-    });
-    $('#roll').trigger('click');
 
     function getOddsArray(currentlevel, callback) {
         $.getJSON("../odds.json", function(data) {
@@ -43,16 +40,21 @@ $(document).ready(function() {
             });
         });
     }
-
     function getChampionData(tierIndex, callback) {
         //console.log("this function");
         $.getJSON("../assets/tft-champion.json", function(data) {
             var champArray = [];
             $.each(data.data, function() {
                 var championobj = $(this);
+
                 if (parseInt(championobj[0]['tier']) === parseInt(tierIndex)) {
-                    champArray.push(championobj[0]['image']['full']);
-                    //champArray[1].push(championobj[0]['name']);
+                    var championData = {
+                        image: championobj[0]['image']['full'],
+                        name: championobj[0]['name']
+                    };
+
+                    champArray.push(championData);
+                    console.log(champArray);
                 }
             });
             callback(champArray);
@@ -87,17 +89,15 @@ $(document).ready(function() {
             callback(championArray);
         });
     }
-
     function onClickChampion(){
         console.log("click");
     }
-
     function refreshShop(championArray) {
         var championPanel = $('.champion-panel');
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
-                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number] + "'/> " +
+                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number]['image'] + "'/> " +
                     "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>");
             });
         });
