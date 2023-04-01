@@ -8,9 +8,11 @@ $(document).ready(function() {
             $.each(data.data, function() {
                 var championobj = $(this);
                 var image = championobj[0]['image']['full'];
-                imageUrls.push(image);
+                var imagefile = "assets/tft-champion/"+image
+                imageUrls.push(imagefile);
             });
             // Preload images
+            console.log(imageUrls)
             $.each(imageUrls, function(index, url) {
                 $('<img/>')[0].src = url;
             });
