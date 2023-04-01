@@ -11,12 +11,9 @@ $(document).ready(function() {
                 imageUrls.push(image);
             });
             // Preload images
-            var images = [];
-            for (var i = 0; i < imageUrls.length; i++) {
-                var image = new Image();
-                image.src = imageUrls[i];
-                images.push(image);
-            }
+            $.each(imageUrls, function(index, url) {
+                $('<img/>')[0].src = url;
+            });
         });
     }
 
