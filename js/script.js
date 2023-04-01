@@ -2,25 +2,22 @@ $(document).ready(function() {
     var oddsArray = null;
     preLoadImages();
     function preLoadImages() {
-        var imageArray = [];
-        $.ajax({
-            url: '../assets/images',
-            success: function(data) {
-                $(data).find('a').each(function() {
-                    var filename = $(this).attr('href');
-                    if (filename.match(/\.(jpg|jpeg|png|gif)$/)) {
-                        var file = "../assets/images/"+filename
-                        imageArray.push(file);
-                    }
-                });
-                if(this.success){
-                    $.each(imageArray, function(url) {
-                        $('<img/>')[0].src = url;
-                    });
-                }
+        $.getJSON("../assets/tft-champion.json", function(data) {
+            var imageUrls = [];
+
+            $.each(data.data, function() {
+                var championobj = $(this);
+                var image = championobj[0]['image']['full'];
+                imageUrls.push(image);
+            });
+            // Preload images
+            var images = [];
+            for (var i = 0; i < imageUrls.length; i++) {
+                var image = new Image();
+                image.src = imageUrls[i];
+                images.push(image);
             }
         });
-
     }
 
     $(document).on('keydown', function(e) {
@@ -102,8 +99,8 @@ $(document).ready(function() {
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
-                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/images/" + champArray[number] + "'/> " +
-                    "<img id='champ-border' src='../assets/images/border_" + tierIndex + ".png'/>");
+                championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number] + "'/> " +
+                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>");
             });
         });
     }
