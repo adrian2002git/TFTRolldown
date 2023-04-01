@@ -50,7 +50,8 @@ $(document).ready(function() {
                 if (parseInt(championobj[0]['tier']) === parseInt(tierIndex)) {
                     var championData = {
                         image: championobj[0]['image']['full'],
-                        name: championobj[0]['name']
+                        name: championobj[0]['name'],
+                        traits: championobj[0]['traits']
                     };
 
                     champArray.push(championData);
