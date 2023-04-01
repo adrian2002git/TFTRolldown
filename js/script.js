@@ -34,7 +34,6 @@ $(document).ready(function() {
             refreshShop(championArray);
         });
     });
-
     $('#roll').trigger('click');
 
     function getOddsArray(currentlevel, callback) {
