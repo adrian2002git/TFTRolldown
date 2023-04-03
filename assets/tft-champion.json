@@ -711,7 +711,7 @@
       "id":"TFT8_EzrealFuture",
       "name":"Ultimate Ezreal",
       "tier":5,
-      "traits":["Parallel", "Parallel", "Sureshot"],
+      "traits":["InfiniTeam", "Parallel", "Sureshot"],
       "image":{
         "full":"TFT8_EzrealFuture.TFT_Set8_Stage2.png",
         "sprite":"tft-champion1.png",

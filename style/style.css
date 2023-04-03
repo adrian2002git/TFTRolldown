@@ -85,6 +85,16 @@ body{
     color: white;
 }
 
+#champ-trait{
+    font-size: 13px;
+    line-height: 20.5px;
+    left: 13%;
+    bottom: 25%;
+    z-index: 1;
+    position: absolute;
+    color: white;
+}
+
 #coin-img{
     left: 81%;
     bottom: 8%;
