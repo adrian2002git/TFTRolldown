@@ -103,7 +103,11 @@ $(document).ready(function() {
                     champTraits += trait + '<br>';
                 });
                 championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number]['image'] + "'/> " +
-                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>" + "<div id='champ-name'>" + champArray[number]['name'] + "</div>" + "<img id='coin-img' src='../assets/hud-images/tft-coin.png'/>" + "<div id='champion-cost'>" + tierIndex + "</div>" + "<div id='champ-trait'>"+champTraits+"</div>");
+                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>" +
+                    "<div id='champ-name'>" + champArray[number]['name'] + "</div>" +
+                    "<img id='coin-img' src='../assets/hud-images/tft-coin.png'/>" +
+                    "<div id='champion-cost'>" + tierIndex + "</div>" +
+                    "<div id='champ-trait'>"+champTraits+"</div>");
 
             });
         });
