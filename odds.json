@@ -23,9 +23,9 @@
     {
       "level": 3,
       "odds": [
-        {"cost": 1, "percent": 70},
+        {"cost": 1, "percent": 75},
         {"cost": 2, "percent": 25},
-        {"cost": 3, "percent": 5},
+        {"cost": 3, "percent": 0},
         {"cost": 4, "percent": 0},
         {"cost": 5, "percent": 0}
       ]
@@ -33,8 +33,8 @@
     {
       "level": 4,
       "odds": [
-        {"cost": 1, "percent": 50},
-        {"cost": 2, "percent": 35},
+        {"cost": 1, "percent": 55},
+        {"cost": 2, "percent": 30},
         {"cost": 3, "percent": 15},
         {"cost": 4, "percent": 0},
         {"cost": 5, "percent": 0}
@@ -43,10 +43,10 @@
     {
       "level": 5,
       "odds": [
-        {"cost": 1, "percent": 35},
-        {"cost": 2, "percent": 35},
-        {"cost": 3, "percent": 25},
-        {"cost": 4, "percent": 5},
+        {"cost": 1, "percent": 45},
+        {"cost": 2, "percent": 33},
+        {"cost": 3, "percent": 20},
+        {"cost": 4, "percent": 2},
         {"cost": 5, "percent": 0}
       ]
     },
@@ -54,40 +54,61 @@
       "level": 6,
       "odds": [
         {"cost": 1, "percent": 25},
-        {"cost": 2, "percent": 35},
+        {"cost": 2, "percent": 40},
         {"cost": 3, "percent": 30},
-        {"cost": 4, "percent": 10},
+        {"cost": 4, "percent": 5},
         {"cost": 5, "percent": 0}
       ]
     },
     {
       "level": 7,
       "odds": [
-        {"cost": 1, "percent": 20},
+        {"cost": 1, "percent": 19},
         {"cost": 2, "percent": 30},
-        {"cost": 3, "percent": 33},
+        {"cost": 3, "percent": 35},
         {"cost": 4, "percent": 15},
-        {"cost": 5, "percent": 2}
+        {"cost": 5, "percent": 1}
       ]
     },
     {
       "level": 8,
       "odds": [
-        {"cost": 1, "percent": 15},
+        {"cost": 1, "percent": 16},
         {"cost": 2, "percent": 20},
         {"cost": 3, "percent": 35},
         {"cost": 4, "percent": 24},
-        {"cost": 5, "percent": 6}
+        {"cost": 5, "percent": 4}
       ]
     },
     {
       "level": 9,
       "odds": [
-        {"cost": 1, "percent": 10},
+        {"cost": 1, "percent": 9},
         {"cost": 2, "percent": 15},
         {"cost": 3, "percent": 30},
         {"cost": 4, "percent": 30},
-        {"cost": 5, "percent": 15}
+        {"cost": 5, "percent": 16}
+      ]
+    },
+    {
+      "level": 10,
+      "odds": [
+        {"cost": 1, "percent": 5},
+        {"cost": 2, "percent": 10},
+        {"cost": 3, "percent": 20},
+        {"cost": 4, "percent": 40},
+        {"cost": 5, "percent": 25}
+
+      ]
+    },
+    {
+      "level": 11,
+      "odds": [
+        {"cost": 1, "percent": 1},
+        {"cost": 2, "percent": 2},
+        {"cost": 3, "percent": 12},
+        {"cost": 4, "percent": 50},
+        {"cost": 5, "percent": 35}
       ]
     }
   ]
