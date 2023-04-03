@@ -76,3 +76,20 @@ body{
     width: 170px;
     color: white;
 }
+
+#champion-cost{
+    left: 89%;
+    bottom: 5%;
+    z-index: 1;
+    position: absolute;
+    color: white;
+}
+
+#coin-img{
+    left: 81%;
+    bottom: 8%;
+    z-index: 1;
+    position: absolute;
+    height: 8px;
+    width: 8px;
+}
