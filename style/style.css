@@ -65,3 +65,14 @@ body{
     height: 100px;
     width: 170px;
 }
+
+#champ-name{
+    font-size: 1rem;
+    left: 6%;
+    bottom: -57%;
+    z-index: 1;
+    position: absolute;
+    height: 100px;
+    width: 170px;
+    color: white;
+}

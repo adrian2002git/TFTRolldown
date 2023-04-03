@@ -99,7 +99,7 @@ $(document).ready(function() {
             getChampionData(tierIndex, function(champArray) {
                 var number = Math.floor(Math.random() * champArray.length);
                 championPanel.eq(i-1).html("<img id='champ-art' src='../assets/tft-champion/" + champArray[number]['image'] + "'/> " +
-                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>");
+                    "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>" + "<div id='champ-name'>" + champArray[number]['name'] + "</div>");
             });
         });
     }
