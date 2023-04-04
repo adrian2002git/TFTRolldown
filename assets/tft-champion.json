@@ -351,7 +351,7 @@
       "id":"TFT8_Vi",
       "name":"Vi",
       "tier":2,
-      "traits":["Underground", "Brawler"],
+      "traits":["Underground", "Brawler", "Aegis"],
       "image":{
         "full":"TFT8_Vi.TFT_Set8.png",
         "sprite":"tft-champion0.png",
