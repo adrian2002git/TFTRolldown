@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Open Sans';
+    font-family: 'Beaufort Regular';
     src: url('../fonts/Beaufort-W01-Regular-1.ttf') format('truetype');
 }
 
@@ -42,7 +42,6 @@ body{
     bottom: 0px;
     left: 50%;
     transform: translate(-50%);
-    font-family: "Beaufort Regular", sans-serif;
 }
 
 .shop-display {
@@ -73,14 +72,17 @@ body{
 }
 
 #champ-name{
-    font-size: 1rem;
+    font-family: "Beaufort Regular";
+    letter-spacing: 0.8px;
+    font-size: 13px;
     left: 6%;
-    bottom: -57%;
+    bottom: -59%;
     z-index: 1;
     position: absolute;
     height: 100px;
     width: 170px;
     color: white;
+    font-weight: bold;
 }
 
 #champion-cost{
@@ -92,13 +94,15 @@ body{
 }
 
 #champ-trait{
-    font-size: 13px;
-    line-height: 20.5px;
-    left: 13%;
+    font-family: "Beaufort Regular", sans-serif;
+    font-size: 14px;
+    line-height: 22.5px;
+    left: 16%;
     bottom: 25%;
     z-index: 1;
     position: absolute;
     color: white;
+    letter-spacing: 0.3px;
 }
 
 #coin-img{
