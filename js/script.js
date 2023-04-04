@@ -41,7 +41,6 @@ $(document).ready(function() {
         });
     }
     function getChampionData(tierIndex, callback) {
-        //console.log("this function");
         $.getJSON("../assets/tft-champion.json", function(data) {
             var champArray = [];
             $.each(data.data, function() {
@@ -55,7 +54,6 @@ $(document).ready(function() {
                     };
 
                     champArray.push(championData);
-                    console.log(champArray);
                 }
             });
             callback(champArray);
