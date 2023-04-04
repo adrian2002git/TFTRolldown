@@ -366,7 +366,7 @@
       "id":"TFT8_Samira",
       "name":"Samira",
       "tier":4,
-      "traits":["Underground", "Ace"],
+      "traits":["Underground","Sureshot", "Ace"],
       "image":{
         "full":"TFT8_Samira.TFT_Set8.png",
         "sprite":"tft-champion0.png",
