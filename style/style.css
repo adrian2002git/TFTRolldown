@@ -74,15 +74,15 @@ body{
 #champ-name{
     font-family: "Beaufort Regular";
     letter-spacing: 0.8px;
-    font-size: 13px;
+    font-size: 16px;
     left: 6%;
-    bottom: -59%;
+    bottom: 5%;
     z-index: 1;
     position: absolute;
-    height: 100px;
-    width: 170px;
+
     color: white;
-    font-weight: bold;
+
+
 }
 
 #champion-cost{
