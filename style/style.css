@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Beaufort-W01-Regular-1.ttf') format('truetype');
+}
+
 html{
     height: 1920px;
     width: 1080px;
@@ -6,9 +11,7 @@ html{
 
 body{
     margin: 0;
-    font-family: "Spiegel Regular", sans-serif;
-
-}
+    }
 
 #hud-shop-panel{
     position: fixed;
@@ -39,6 +42,7 @@ body{
     bottom: 0px;
     left: 50%;
     transform: translate(-50%);
+    font-family: "Beaufort Regular", sans-serif;
 }
 
 .shop-display {
