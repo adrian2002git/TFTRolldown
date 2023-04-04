@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Beaufort Regular';
     src: url('../fonts/Beaufort-W01-Regular-1.ttf') format('truetype');
+    src: url('../fonts/Friz Quadrata TT Regular.ttf') format('truetype');;
 }
 
 html{
@@ -48,13 +49,13 @@ body{
     position: relative;
     bottom: 5px;
     display: flex;
-    left: 11%;
+    left: 10.7%;
 }
 
 .champion-panel{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 0fr);
+    grid-template-columns: repeat(3, 0fr);
     grid-gap: 2px;
 }
 
@@ -72,17 +73,14 @@ body{
 }
 
 #champ-name{
-    font-family: "Beaufort Regular";
+    font-family: "Friz Quadrata TT", serif;
     letter-spacing: 0.8px;
     font-size: 16px;
     left: 6%;
-    bottom: 5%;
+    bottom: 4%;
     z-index: 1;
     position: absolute;
-
     color: white;
-
-
 }
 
 #champion-cost{
@@ -94,7 +92,7 @@ body{
 }
 
 #champ-trait{
-    font-family: "Beaufort Regular", sans-serif;
+    font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 22.5px;
     left: 16%;
