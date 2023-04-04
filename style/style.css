@@ -1,7 +1,6 @@
 @font-face {
-    font-family: 'Beaufort Regular';
-    src: url('../fonts/Beaufort-W01-Regular-1.ttf') format('truetype');
-    src: url('../fonts/Friz Quadrata TT Regular.ttf') format('truetype');;
+    font-family: "Friz Quadrata Regular";
+    src: url('../fonts/Friz Quadrata TT Regular.ttf') format('truetype');
 }
 
 html{
@@ -43,6 +42,10 @@ body{
     bottom: 0px;
     left: 50%;
     transform: translate(-50%);
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .shop-display {
@@ -55,7 +58,7 @@ body{
 .champion-panel{
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, 0fr);
+    grid-template-columns: repeat(2, 0fr);
     grid-gap: 2px;
 }
 
@@ -73,11 +76,11 @@ body{
 }
 
 #champ-name{
-    font-family: "Friz Quadrata TT", serif;
-    letter-spacing: 0.8px;
-    font-size: 16px;
+    font-family: "Friz Quadrata Regular";
+    letter-spacing: 0.5px;
+    font-size: 14px;
     left: 6%;
-    bottom: 4%;
+    bottom: 5%;
     z-index: 1;
     position: absolute;
     color: white;
@@ -85,14 +88,14 @@ body{
 
 #champion-cost{
     left: 89%;
-    bottom: 5%;
+    bottom: 4%;
     z-index: 1;
     position: absolute;
     color: white;
 }
 
 #champ-trait{
-    font-family: Arial, sans-serif;
+    font-family: Calibri;
     font-size: 14px;
     line-height: 22.5px;
     left: 16%;

@@ -26,6 +26,8 @@ $(document).ready(function() {
     $(document).on('keydown', function(e) {
         if (e.key === "d") {
             $('#roll').click();
+            var sound = new Audio('../assets/tft-rollsound.mp3');
+            sound.play();
         }
     });
 
