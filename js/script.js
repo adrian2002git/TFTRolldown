@@ -27,7 +27,7 @@ $(document).ready(function() {
         if (e.key === "d") {
             $('#roll').click();
             var sound = new Audio('../assets/tft-rollsound.mp3');
-            sound.play();
+
         }
     });
 
@@ -94,6 +94,7 @@ $(document).ready(function() {
         console.log("click");
     }
     function refreshShop(championArray) {
+        sound.play();
         var championPanel = $('.champion-panel');
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
