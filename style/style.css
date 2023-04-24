@@ -3,6 +3,11 @@
     src: url('../fonts/Friz Quadrata TT Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: "Circular Std";
+    src: url('../fonts/FontsFree-Net-Circular-Std-Book.ttf') format('truetype');
+}
+
 html{
     height: 1920px;
     width: 1080px;
@@ -94,7 +99,7 @@ body{
 }
 
 #champ-trait{
-    font-family: Calibri;
+    font-family: "Circular Std", sans-serif;
     font-size: 14px;
     line-height: 22.5px;
     left: 16%;
