@@ -1,4 +1,10 @@
+function onClickChampion(){
+    var champName = $(this).find('#champ-name').text();
+    $(this).html();
+    console.log(champName);
+}
 $(document).ready(function() {
+    $('.champion-panel').click(onClickChampion);
     var oddsArray = null;
     preLoadImages();
     $("#roll").click(function() {
@@ -27,9 +33,11 @@ $(document).ready(function() {
         if (e.key === "d") {
             $('#roll').click();
             var sound = new Audio('../assets/tft-rollsound.mp3');
+            sound.play();
 
         }
     });
+
 
     function getOddsArray(currentlevel, callback) {
         $.getJSON("../odds.json", function(data) {
@@ -90,11 +98,9 @@ $(document).ready(function() {
             callback(championArray);
         });
     }
-    function onClickChampion(){
-        console.log("click");
-    }
+
     function refreshShop(championArray) {
-        sound.play();
+
         var championPanel = $('.champion-panel');
         $.each(championArray, function(i, tierIndex) {
             getChampionData(tierIndex, function(champArray) {
@@ -109,8 +115,8 @@ $(document).ready(function() {
                     "<div id='champ-name'>" + champArray[number]['name'] + "</div>" +
                     "<img id='coin-img' src='../assets/hud-images/tft-coin.png'/>" +
                     "<div id='champion-cost'>" + tierIndex + "</div>" +
-                    "<div id='champ-trait'>"+champTraits+"</div>");
-
+                    "<div id='champ-trait'>"+champTraits+"</div>"
+                );
             });
         });
     }

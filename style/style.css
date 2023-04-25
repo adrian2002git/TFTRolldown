@@ -67,6 +67,10 @@ body{
     grid-gap: 2px;
 }
 
+.champion-panel:hover{
+    cursor: pointer;
+}
+
 #champ-border{
     height: 130px;
     width: 175px;
