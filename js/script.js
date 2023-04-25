@@ -9,6 +9,7 @@ function onClickChampion(){
     $('body').append(champName)
     $('body').append('</br>')
     console.log(champName);
+
 }
 $(document).ready(function() {
     $('.champion-panel').click(onClickChampion);
