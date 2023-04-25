@@ -1,6 +1,13 @@
 function onClickChampion(){
     var champName = $(this).find('#champ-name').text();
-    $(this).html();
+    var champCost = $(this).find('#champion-cost').text();
+    var num = parseInt(champCost);
+    var curGold = $('#CurrentGold').val();
+    var result = curGold - num;
+    $('#CurrentGold').val(result);
+    $(this).html('<img id="panel_empty" src="../assets/hud-images/panel_empty.png" draggable="false">');
+    $('body').append(champName)
+    $('body').append('</br>')
     console.log(champName);
 }
 $(document).ready(function() {
@@ -10,6 +17,9 @@ $(document).ready(function() {
     $("#roll").click(function() {
         generateChampion(function(championArray) {
             refreshShop(championArray);
+            var curGold = $('#CurrentGold').val();
+            var result = curGold - 2;
+            $('#CurrentGold').val(result);
         });
     });
     $('#roll').trigger('click');
