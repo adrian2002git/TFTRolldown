@@ -122,7 +122,7 @@ $(document).ready(function() {
                     if(trait === 'Mecha: PRIME'){
                         trait = 'Mecha Prime';
                     }
-                    champTraits += '<div id="wrapper"><img id="trait-img" src="../assets/tft-trait/Trait_Icon_8_'+ trait +'.png" />' + trait + '<br></div>';
+                    champTraits += '<img id="trait-img" src="../assets/tft-trait/Trait_Icon_8_'+ trait +'.png" />' + trait + '<br>';
                     //'<img src="assets/hud-images/trait-bg.png" id="trait-bg">';
                 });
                 console.log(champTraits);

@@ -144,17 +144,15 @@ body{
     width: 8px;
 }
 
-#wrapper{
-    background: url("../assets/hud-images/trait-bg.png");
-    background-position: center;
-    background-size: 120%;
-    background-repeat: no-repeat;
-}
-
 #trait-img{
-    margin-right:7px;
+    background: url(../assets/hud-images/trait-bg.png);
+    background-position: 0px -2px;
+    background-size: 85%;
+    background-repeat: no-repeat;
+    margin-right: 7px;
     height: 15px;
     width: 15px;
+    padding: 0px 6px 5px 5px;
 }
 
 #trait-bg{
