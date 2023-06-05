@@ -1,3 +1,4 @@
+//todo New Set Release: Add Traits to chmapion.json file, Rename Traits
 function onClickChampion(){
     var champName = $(this).find('#champ-name').text();
     var champCost = $(this).find('#champion-cost').text();
@@ -118,9 +119,15 @@ $(document).ready(function() {
                 var number = Math.floor(Math.random() * champArray.length);
                 var champTraits = '';
                 $.each(champArray[number]['traits'], function(index, trait) {
-                    champTraits += trait + '<br>';
+                    if(trait === 'Mecha: PRIME'){
+                        trait = 'Mecha Prime';
+                    }
+                    champTraits += '<div id="wrapper"><img id="trait-img" src="../assets/tft-trait/Trait_Icon_8_'+ trait +'.png" />' + trait + '<br></div>';
+                    //'<img src="assets/hud-images/trait-bg.png" id="trait-bg">';
                 });
+                console.log(champTraits);
                 championPanel.eq(i-1).html(
+
                     "<img id='champ-art' src='../assets/tft-champion/" + champArray[number]['image'] + "'/> " +
                     "<img id='champ-border' src='../assets/hud-images/border_" + tierIndex + ".png'/>" +
                     "<div id='champ-name'>" + champArray[number]['name'] + "</div>" +
